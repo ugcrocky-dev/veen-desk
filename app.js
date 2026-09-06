@@ -1,8 +1,9 @@
 (function () {
   const products = window.VEEN_PRODUCTS || [];
-  const groups = ["active", "creator", "practice", "archive"];
+  const meta = window.VEEN_META || {};
+  const groups = ["active", "vps", "creator", "practice", "archive"];
 
-  function host(url) {
+  function hostLabel(url) {
     try {
       return new URL(url).host.replace(/^www\./, "");
     } catch {
@@ -13,19 +14,50 @@
   function renderRow(p) {
     const row = document.createElement("article");
     row.className = "row";
+    if (p.host === "vps") row.classList.add("is-vps");
 
     const main = document.createElement("div");
     const name = document.createElement("h3");
     name.className = "name";
     name.textContent = p.name;
+
+    if (p.host) {
+      const badge = document.createElement("span");
+      badge.className = "badge host-" + p.host;
+      badge.textContent = p.host;
+      name.appendChild(document.createTextNode(" "));
+      name.appendChild(badge);
+    }
+
     const desc = document.createElement("p");
     desc.className = "desc";
     desc.textContent = p.desc;
     main.append(name, desc);
 
-    const meta = document.createElement("div");
-    meta.className = "meta";
-    meta.textContent = p.url ? host(p.url) : p.repo ? "repo only" : "—";
+    if (p.note) {
+      const note = document.createElement("p");
+      note.className = "note";
+      note.textContent = p.note;
+      main.appendChild(note);
+    }
+
+    if (Array.isArray(p.altUrls) && p.altUrls.length) {
+      const alts = document.createElement("div");
+      alts.className = "alts";
+      p.altUrls.forEach((u) => {
+        const a = document.createElement("a");
+        a.href = u;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = hostLabel(u) || u;
+        alts.appendChild(a);
+      });
+      main.appendChild(alts);
+    }
+
+    const metaEl = document.createElement("div");
+    metaEl.className = "meta";
+    metaEl.textContent = p.url ? hostLabel(p.url) : p.repo ? "repo only" : "—";
 
     const actions = document.createElement("div");
     actions.className = "actions";
@@ -36,7 +68,7 @@
       live.href = p.url;
       live.target = "_blank";
       live.rel = "noopener";
-      live.textContent = "Open live";
+      live.textContent = p.host === "vps" ? "Open VPS" : "Open live";
       actions.appendChild(live);
     }
     if (p.repo) {
@@ -58,7 +90,7 @@
       actions.appendChild(chat);
     }
 
-    row.append(main, meta, actions);
+    row.append(main, metaEl, actions);
     return row;
   }
 
@@ -70,15 +102,21 @@
       .forEach((p) => mount.appendChild(renderRow(p)));
   });
 
-  const active = products.filter((p) => p.group === "active").length;
-  const live = products.filter((p) => !!p.url).length;
-  const repos = products.filter((p) => !!p.repo).length;
-  const elA = document.getElementById("count-active");
-  const elL = document.getElementById("count-live");
-  const elR = document.getElementById("count-repos");
-  if (elA) elA.textContent = String(active);
-  if (elL) elL.textContent = String(live);
-  if (elR) elR.textContent = String(repos);
+  const set = (id, n) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(n);
+  };
+  set("count-active", products.filter((p) => p.group === "active").length);
+  set("count-vps", products.filter((p) => p.group === "vps").length);
+  set(
+    "count-live",
+    products.filter((p) => !!p.url).length +
+      products.reduce((n, p) => n + (Array.isArray(p.altUrls) ? p.altUrls.length : 0), 0)
+  );
+  set("count-repos", products.filter((p) => !!p.repo).length);
+
+  const updated = document.getElementById("updated-at");
+  if (updated) updated.textContent = meta.updatedAt || "—";
 
   const io = new IntersectionObserver(
     (entries) => {

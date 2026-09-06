@@ -161,7 +161,7 @@ body {
 
 .strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   margin: 0 clamp(1.2rem, 4vw, 3rem) 2rem;
   padding: 1.2rem 0;
@@ -238,11 +238,62 @@ body {
   letter-spacing: -0.02em;
   color: var(--paper);
   margin: 0 0 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+.badge {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--mist);
+}
+.badge.host-vps {
+  background: rgba(201, 132, 74, 0.2);
+  border-color: rgba(201, 132, 74, 0.45);
+  color: #f0c49a;
+}
+.badge.host-vercel {
+  background: rgba(63, 143, 107, 0.16);
+  border-color: rgba(63, 143, 107, 0.35);
+  color: #b7ebcf;
 }
 .desc {
   margin: 0;
   color: var(--mist);
   font-size: 0.92rem;
+}
+.note {
+  margin: 0.35rem 0 0;
+  color: #c9a57a;
+  font-size: 0.82rem;
+}
+.alts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.45rem;
+}
+.alts a {
+  color: #9ec4b3;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.alts a:hover { color: var(--paper); }
+.row.is-vps:hover {
+  background: rgba(201, 132, 74, 0.06);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  color: #d7c4a8;
 }
 .meta {
   color: #7f9a8d;
@@ -288,6 +339,10 @@ body {
     gap: 0.55rem;
   }
   .actions { justify-content: flex-start; }
-  .strip { grid-template-columns: 1fr; }
+  .strip { grid-template-columns: 1fr 1fr; }
   .nav { display: none; }
+}
+
+@media (max-width: 520px) {
+  .strip { grid-template-columns: 1fr; }
 }
