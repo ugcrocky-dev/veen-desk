@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veen Desk — Product HQ</title>
+  <meta name="description" content="Chief of Staff desk for every product Praveen Buchi builds — live links, repos, and ops in one place." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="mark" href="#top">Veen Desk</a>
+    <nav class="nav">
+      <a href="#active">Active</a>
+      <a href="#creator">Creator</a>
+      <a href="#practice">Practice</a>
+      <a href="#archive">Archive</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="brand">Veen Desk</p>
+      <h1>Every product. One desk.</h1>
+      <p class="lede">Chief of Staff view across labs, launch boards, creator tools, and practice systems — live links and repos, kept in one place.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#active">Open active stack</a>
+        <a class="btn ghost" href="https://github.com/ugcrocky-dev/veen-desk" target="_blank" rel="noopener">Source</a>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Portfolio pulse">
+      <div><strong id="count-active">0</strong><span>active builds</span></div>
+      <div><strong id="count-live">0</strong><span>live URLs</span></div>
+      <div><strong id="count-repos">0</strong><span>GitHub repos</span></div>
+    </section>
+
+    <section id="active" class="block">
+      <div class="block-head">
+        <h2>Active stack</h2>
+        <p>Recent builds from cloud chats — trading labs, launch dashboards, and sourcing tools.</p>
+      </div>
+      <div class="list" data-group="active"></div>
+    </section>
+
+    <section id="creator" class="block">
+      <div class="block-head">
+        <h2>Creator & brand</h2>
+        <p>Collaboration pipeline, rate card, and public brand surfaces.</p>
+      </div>
+      <div class="list" data-group="creator"></div>
+    </section>
+
+    <section id="practice" class="block">
+      <div class="block-head">
+        <h2>Practice & local ops</h2>
+        <p>Next Step / Lawrenceville medical and clinic-day tools.</p>
+      </div>
+      <div class="list" data-group="practice"></div>
+    </section>
+
+    <section id="archive" class="block">
+      <div class="block-head">
+        <h2>Earlier ships</h2>
+        <p>Still reachable — older sites and experiments worth keeping on the map.</p>
+      </div>
+      <div class="list" data-group="archive"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Maintained as CoS HQ for Praveen Buchi · Rocky Veen · ugcrocky-dev</p>
+    <p class="muted">Updated from cloud agent history + Vercel project inventory</p>
+  </footer>
+
+  <script src="./products.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
