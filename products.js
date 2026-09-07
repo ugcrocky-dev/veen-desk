@@ -77,6 +77,16 @@ window.VEEN_PRODUCTS = [
     host: "vercel"
   },
 
+  {
+    group: "active",
+    name: "Kalshi Paper Lab",
+    desc: "Paper-trading lab: 100 bots on Kalshi public markets and tape.",
+    url: "https://kalshi-paper-lab.vercel.app",
+    repo: "https://github.com/ugcrocky-dev/kalshi-paper-lab",
+    chat: "https://cursor.com/agents/bc-57166461-9dfc-593a-ba0f-d9a809ed7a87",
+    host: "vercel"
+  },
+
   // —— VPS (RackNerd 108.174.57.19) ——
   {
     group: "vps",
@@ -121,6 +131,14 @@ window.VEEN_PRODUCTS = [
   },
 
   // —— Creator ——
+  {
+    group: "creator",
+    name: "Veen Desk",
+    desc: "This HQ — living inventory of every product, VPS link, and repo.",
+    url: "https://veen-desk.vercel.app",
+    repo: "https://github.com/ugcrocky-dev/veen-desk",
+    host: "vercel"
+  },
   {
     group: "creator",
     name: "Collab HQ",
@@ -331,7 +349,7 @@ window.VEEN_PRODUCTS = [
 ];
 
 window.VEEN_META = {
-  updatedAt: "2026-09-06",
+  updatedAt: "2026-09-07",
   vpsIp: "108.174.57.19",
   note: "Living inventory — add new products to products.js and push main."
 };
