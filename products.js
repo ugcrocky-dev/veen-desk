@@ -87,28 +87,72 @@ window.VEEN_PRODUCTS = [
     host: "vercel"
   },
 
+  {
+    group: "active",
+    name: "Hyperliquid Paper Lab",
+    desc: "Hyperliquid paper lab: 1000 bots racing copy + proprietary perp strategies (live on VPS :3030).",
+    url: "http://108.174.57.19:3030",
+    repo: "https://github.com/ugcrocky-dev/hyperliquid-paper-lab",
+    host: "vps"
+  },
+  {
+    group: "active",
+    name: "Manifold Copy Bot",
+    desc: "Live Manifold mana bot that copies the top profit trader at a fixed stake (VPS :3020).",
+    url: "http://108.174.57.19:3020",
+    repo: "https://github.com/ugcrocky-dev/manifold-copy-bot",
+    chat: "https://cursor.com/agents/bc-ce4ff8cb-b202-57bc-965e-343b92bdfe5f",
+    host: "vps"
+  },
+
   // —— VPS (RackNerd 108.174.57.19) ——
   {
     group: "vps",
-    name: "FOMO Paper Lab (VPS)",
-    desc: "Always-on FOMO paper lab on RackNerd — preferred production for ticks/keepalive.",
+    name: "Polymarket Paper Lab (VPS)",
+    desc: "Always-on Polymarket paper lab on RackNerd (nip.io + :3010).",
     url: "https://paperlab.108.174.57.19.nip.io",
     altUrls: [
-      "http://108.174.57.19:3010",
-      "http://108.174.57.19"
+      "http://108.174.57.19:3010"
     ],
-    repo: "https://github.com/ugcrocky-dev/fomo-paper-lab",
-    chat: "https://cursor.com/agents/bc-01a075d2-6f5e-7f04-a1c0-8503634b995f",
+    repo: "https://github.com/ugcrocky-dev/polymarket-paper-lab",
+    chat: "https://cursor.com/agents/bc-01a076b0-4497-7692-968f-ed8ab7ae3d8d",
     host: "vps",
     note: "IP 108.174.57.19 · port 3010"
   },
   {
     group: "vps",
-    name: "Crazy Ideas Service (VPS)",
-    desc: "Service from crazy-ideas implementation chat on the same RackNerd box.",
-    url: "http://108.174.57.19:43122",
+    name: "Hyperliquid Paper Lab (VPS)",
+    desc: "1000 bots racing copy + proprietary perp strategies on Hyperliquid paper.",
+    url: "http://108.174.57.19:3030",
+    repo: "https://github.com/ugcrocky-dev/hyperliquid-paper-lab",
+    host: "vps",
+    note: "IP 108.174.57.19 · port 3030"
+  },
+  {
+    group: "vps",
+    name: "Manifold Copy Bot (VPS)",
+    desc: "Live Manifold mana bot that copies the top profit trader at a fixed stake.",
+    url: "http://108.174.57.19:3020",
+    repo: "https://github.com/ugcrocky-dev/manifold-copy-bot",
+    chat: "https://cursor.com/agents/bc-ce4ff8cb-b202-57bc-965e-343b92bdfe5f",
+    host: "vps",
+    note: "IP 108.174.57.19 · port 3020"
+  },
+  {
+    group: "vps",
+    name: "Momentum Radar (VPS)",
+    desc: "Transparent crypto momentum research dashboard on the RackNerd box.",
+    url: "http://108.174.57.19:3000",
     repo: null,
-    chat: "https://cursor.com/agents/bc-01a06ef3-21fe-7689-bac3-214e4191bd55",
+    host: "vps",
+    note: "IP 108.174.57.19 · port 3000"
+  },
+  {
+    group: "vps",
+    name: "Pulse · Next Step Psychiatry (VPS)",
+    desc: "Practice operations desk (Pulse) hosted on RackNerd.",
+    url: "http://108.174.57.19:43122",
+    repo: "https://github.com/ugcrocky-dev/Next-Step-Automation",
     host: "vps",
     note: "IP 108.174.57.19 · port 43122"
   },
@@ -349,7 +393,7 @@ window.VEEN_PRODUCTS = [
 ];
 
 window.VEEN_META = {
-  updatedAt: "2026-09-07",
+  updatedAt: "2026-09-08",
   vpsIp: "108.174.57.19",
   note: "Living inventory — add new products to products.js and push main."
 };
