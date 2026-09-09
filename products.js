@@ -105,6 +105,15 @@ window.VEEN_PRODUCTS = [
     host: "vps"
   },
 
+  {
+    group: "active",
+    name: "Limitless Paper Lab",
+    desc: "Limitless paper trading lab hosted on RackNerd VPS :3040.",
+    url: "http://108.174.57.19:3040",
+    repo: null,
+    host: "vps"
+  },
+
   // —— VPS (RackNerd 108.174.57.19) ——
   {
     group: "vps",
@@ -128,6 +137,16 @@ window.VEEN_PRODUCTS = [
     host: "vps",
     note: "IP 108.174.57.19 · port 3030"
   },
+  {
+    group: "vps",
+    name: "Limitless Paper Lab (VPS)",
+    desc: "Limitless paper lab always-on service on RackNerd.",
+    url: "http://108.174.57.19:3040",
+    repo: null,
+    host: "vps",
+    note: "IP 108.174.57.19 · port 3040"
+  },
+
   {
     group: "vps",
     name: "Manifold Copy Bot (VPS)",
@@ -393,7 +412,7 @@ window.VEEN_PRODUCTS = [
 ];
 
 window.VEEN_META = {
-  updatedAt: "2026-09-08",
+  updatedAt: "2026-09-09",
   vpsIp: "108.174.57.19",
   note: "Living inventory — add new products to products.js and push main."
 };
