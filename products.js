@@ -98,6 +98,16 @@ window.VEEN_PRODUCTS = [
 
   {
     group: "active",
+    name: "Kalshi Edge Desk",
+    desc: "Kalshi demo desk — USA-ok venue fills only; predictions + research (live on VPS :3050).",
+    url: "http://108.174.57.19:3050",
+    repo: "https://github.com/ugcrocky-dev/kalshi-paper-lab",
+    chat: "https://cursor.com/agents/bc-a9504e38-aebb-5333-bf91-4f953bca288b",
+    host: "vps"
+  },
+
+  {
+    group: "active",
     name: "Hyperliquid Paper Lab",
     desc: "Hyperliquid paper lab: 1000 bots racing copy + proprietary perp strategies (live on VPS :3030).",
     url: "http://108.174.57.19:3030",
@@ -165,6 +175,16 @@ window.VEEN_PRODUCTS = [
     chat: "https://cursor.com/agents/bc-ce4ff8cb-b202-57bc-965e-343b92bdfe5f",
     host: "vps",
     note: "IP 108.174.57.19 · port 3020"
+  },
+  {
+    group: "vps",
+    name: "Kalshi Edge Desk (VPS)",
+    desc: "Kalshi demo desk — USA-ok venue fills only; predictions + research.",
+    url: "http://108.174.57.19:3050",
+    repo: "https://github.com/ugcrocky-dev/kalshi-paper-lab",
+    chat: "https://cursor.com/agents/bc-a9504e38-aebb-5333-bf91-4f953bca288b",
+    host: "vps",
+    note: "IP 108.174.57.19 · port 3050"
   },
   {
     group: "vps",
@@ -421,7 +441,7 @@ window.VEEN_PRODUCTS = [
 ];
 
 window.VEEN_META = {
-  updatedAt: "2026-09-09",
+  updatedAt: "2026-09-11",
   vpsIp: "108.174.57.19",
   note: "Living inventory — add new products to products.js and push main."
 };
